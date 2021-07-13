@@ -10,7 +10,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-import time
+#import time
 
 app = Flask(__name__)
 
@@ -52,10 +52,6 @@ def handle_message(event):
         r = '一路大順暢!'
         replymsg(r)
     elif '塞車' in msg:
-        r = '很誇張'
-        replymsg(r)
-        r = '我有行車紀錄器你知道嘛'
-        replymsg(r)
         r = '很誇張'
         replymsg(r)
     else:
