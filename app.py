@@ -47,6 +47,11 @@ def handle_message(event):
         sticker_id='1'
         )
 
+        line_bot_api.reply_message(
+            event.reply_token,
+            sticker_message)
+        return
+
     r = '講點別的 好嗎'
     if msg == '新北王先生':
         r = '一路大順暢!'
