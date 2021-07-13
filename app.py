@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage,
+    MessageEvent, TextMessage, TextSendMessage, 
 )
 
 #import time
@@ -39,23 +39,18 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    def replymsg(r):
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=r))
+
 
     msg = event.message.text
     r = '講點別的 好嗎'
-
-
     if msg == '新北王先生':
         r = '一路大順暢!'
-        replymsg(r)
     elif '塞車' in msg:
         r = '很誇張 我有行車紀錄器你知道嗎'
-        replymsg(r)
-    else:
-        replymsg(r)
+
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=r))
 
 
 
