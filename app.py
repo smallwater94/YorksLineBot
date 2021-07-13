@@ -51,7 +51,7 @@ def handle_message(event):
     if msg == '新北王先生':
         r = '一路大順暢!'
         replymsg(r)
-    elif ['內湖','塞車','內湖有塞車嗎','內湖塞車嗎','內湖塞車'] in msg:
+    elif '塞車' in msg:
         r = '很誇張'
         replymsg(r)
         r = '我有行車紀錄器你知道嘛'
