@@ -39,6 +39,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    def replymsg(r):
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=r))
+    
     msg = event.message.text
     r = '講點別的 好嗎'
 
@@ -56,15 +61,11 @@ def handle_message(event):
     else:
         replymsg(r)
     line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=r))
+        event.reply_token,
+        TextSendMessage(text=r))
 
 
 
-    def replymsg(r):
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=r))
 
 if __name__ == "__main__":
     app.run()
