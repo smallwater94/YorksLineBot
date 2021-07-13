@@ -10,7 +10,7 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, StickerSendMessage
 )
 
-#import time
+import random
 
 app = Flask(__name__)
 
@@ -41,10 +41,11 @@ def callback():
 def handle_message(event):
     msg = event.message.text
 
-    if msg == '貼圖':
+    if msg == 'R':
+        ran = random.randint(1988, 2027)
         sticker_message = StickerSendMessage(
-        package_id='1',
-        sticker_id='1'
+        package_id='446',
+        sticker_id= ran
         )
 
         line_bot_api.reply_message(
