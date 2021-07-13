@@ -43,26 +43,23 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=r))
-    
+
     msg = event.message.text
     r = '講點別的 好嗎'
 
 
     if msg == '新北王先生':
         r = '一路大順暢!'
-    elif msg in ['內湖','塞車','內湖有塞車嗎','內湖塞車嗎','內湖塞車']:
+        replymsg(r)
+    elif ['內湖','塞車','內湖有塞車嗎','內湖塞車嗎','內湖塞車'] in msg:
         r = '很誇張'
         replymsg(r)
-        time.sleep(0.3)
         r = '我有行車紀錄器你知道嘛'
         replymsg(r)
-        time.sleep(0.8)
         r = '很誇張'
+        replymsg(r)
     else:
         replymsg(r)
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=r))
 
 
 
