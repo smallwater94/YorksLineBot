@@ -57,10 +57,10 @@ def handle_message(event):
         r = '一路大順暢!'
     elif '塞車' in msg:
         r = '很誇張 我有行車紀錄器你知道嗎'
-    else:
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=r))
+    
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=r))
 
 
 
