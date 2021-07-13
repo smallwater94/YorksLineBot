@@ -55,9 +55,10 @@ def handle_message(event):
         r = '很誇張'
     else:
         replymsg(r)
-        line_bot_api.reply_message(
+    line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=r))
+
 
 
     def replymsg(r):
