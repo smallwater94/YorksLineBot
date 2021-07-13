@@ -7,7 +7,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, 
+    MessageEvent, TextMessage, TextSendMessage, StickerSendMessage
 )
 
 #import time
@@ -40,6 +40,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
 
+    if msg == '貼圖':
+        sticker_message = StickerSendMessage(
+        package_id='1',
+        sticker_id='1'
+        )
 
     msg = event.message.text
     r = '講點別的 好嗎'
