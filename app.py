@@ -39,6 +39,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    msg = event.message.text
 
     if msg == '貼圖':
         sticker_message = StickerSendMessage(
@@ -46,7 +47,6 @@ def handle_message(event):
         sticker_id='1'
         )
 
-    msg = event.message.text
     r = '講點別的 好嗎'
     if msg == '新北王先生':
         r = '一路大順暢!'
