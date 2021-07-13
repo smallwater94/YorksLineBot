@@ -10,7 +10,6 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
-import time
 
 app = Flask(__name__)
 
@@ -47,9 +46,7 @@ def handle_message(event):
         r = '一路大順暢!'
     elif mas in ['內湖','塞車','內湖有塞車嗎','內湖塞車嗎','內湖塞車']:
         r = '很誇張'
-        time.sleep(0.3)
         r = '我有行車紀錄器你知道嘛'
-        time.sleep(0.8)
         r = '很誇張'
 
     line_bot_api.reply_message(
