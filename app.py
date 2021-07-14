@@ -53,7 +53,7 @@ def handle_message(event):
             sticker_message)
         return
 
-    r = '講點別的 好嗎'
+    r = '特殊指令有:["新北王先生"，"塞車"] 隨機貼圖請輸入:"R"'
     if msg == '新北王先生':
         r = '一路大順暢!'
     elif '塞車' in msg:
